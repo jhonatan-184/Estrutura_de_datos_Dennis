@@ -35,5 +35,38 @@ public class Menu {
                     break;
             }
         }
+         Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese la dimension de la matrix");
+        int n = sc.nextInt();
+        Almacen2[][] ventas = new Almacen2[n][n];
+        Metodos A = new Metodos();
+        boolean continuar = true;
+        while (continuar) {
+            int opt = A.OpcionesMenuPrincipal();
+            switch (opt) {
+                case 1:
+                    ventas = A.LLenarRegistros(n);
+                    break;
+                case 2:
+                    System.out.println("se muestran a continuacion los turnos pendiente");
+                    A.MostrarTurnosPendientes(ventas);
+                    break;
+                case 3:
+                    System.out.println("los pedidos despachgados son:");
+                    A.MostrarTurnosDespachados(ventas);
+                    break;
+                case 4:
+                    ventas = A.Despachar(ventas);
+                    break;
+                case 5:
+                    System.out.println("Que tenga un feliz día");
+                    continuar = false;
+                    break;
+
+                default:
+                    System.out.println("Esta opción no existe por favor valide de nuevo ");
+                    break;
+            }
+        }
     }
 }
