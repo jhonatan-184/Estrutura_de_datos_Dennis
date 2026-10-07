@@ -5,7 +5,7 @@ public class Objbanco {
     int Edad;
     int Condición_especial;
     int Número_turno;
-
+    int Estate; // 1 = pendiente, 2 = atendido, 
     public Objbanco() {
     }
 
@@ -55,6 +55,14 @@ public class Objbanco {
 
     public void setNúmero_turno(int número_turno) {
         Número_turno = número_turno;
+    }
+
+    public int getEstate() {
+        return Estate;
+    }
+
+    public void setEstate(int Estate) {
+        this.Estate = Estate;
     }
 
 }
